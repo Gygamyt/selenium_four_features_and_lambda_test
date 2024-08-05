@@ -8,8 +8,7 @@ public enum BrowserTypes implements DriverOptions {
     CHROME {
         @Override
         public ChromeOptions getChromeOptions() {
-            ChromeOptions options = new ChromeOptions();
-            return options;
+            return CommonDriverOptions.getCommonChromeOptions();
         }
 
         @Override
@@ -30,9 +29,7 @@ public enum BrowserTypes implements DriverOptions {
 
         @Override
         public FirefoxOptions getFirefoxOptions() {
-            FirefoxOptions options = new FirefoxOptions();
-            options.addArguments("--window-size=1920x1080");
-            return null;
+            return CommonDriverOptions.getCommonFirefoxOptions();
         }
 
         @Override
@@ -53,7 +50,7 @@ public enum BrowserTypes implements DriverOptions {
 
         @Override
         public EdgeOptions getEdgeOptions() {
-            return null;
+            return CommonDriverOptions.getCommonEdgeOptions();
         }
     }
 }
