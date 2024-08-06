@@ -9,10 +9,17 @@ public class CommonDriverOptions {
 
     public static ChromeOptions getCommonChromeOptions() {
         ChromeOptions options = new ChromeOptions();
+        options.addArguments("enable-automation");
         options.addArguments("--start-maximized");
-        options.addArguments("--disable-popup-blocking");
-        options.addArguments("--incognito");
+        options.addArguments("--no-sandbox");
         options.addArguments("--disable-extensions");
+        options.addArguments("--remote-allow-origins=*");
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--window-size=1920x1080");
+        options.addArguments("--disable-popup-blocking");
+        options.addArguments("--disable-infobars");
+        options.addArguments("--no-first-run");
+        options.setBrowserVersion("113.0");
         return options;
     }
 
