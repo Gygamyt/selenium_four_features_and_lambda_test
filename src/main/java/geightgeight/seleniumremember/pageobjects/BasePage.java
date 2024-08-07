@@ -1,6 +1,7 @@
 package geightgeight.seleniumremember.pageobjects;
 
 import geightgeight.seleniumremember.driver.DriverFactory;
+import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -9,6 +10,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.HashMap;
+import java.util.Map;
 
 public abstract class BasePage {
 
@@ -29,6 +32,26 @@ public abstract class BasePage {
 
     private void waitUntilClickable(WebElement element) {
         waiter.until(ExpectedConditions.elementToBeClickable(element));
+    }
+
+    public void enterText(WebElement element, String text) {
+        element.sendKeys(text);
+    }
+
+    public String getText(WebElement element) {
+        return element.getText();
+    }
+
+    public Map<String, Integer> getCoordinatesOfElement(WebElement element) {
+        Point point = element.getLocation();
+
+        Integer x = point.getX();
+        Integer y = point.getY();
+
+        Map<String, Integer> coordinates = new HashMap<>();
+        coordinates.put("x", x);
+        coordinates.put("y", y);
+        return coordinates;
     }
 
     public void getCurrentLink () {

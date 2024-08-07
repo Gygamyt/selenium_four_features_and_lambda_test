@@ -6,6 +6,9 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.WebDriver;
 
+import static geightgeight.seleniumremember.utils.ProcessKiller.killProcessesUsingIds;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public abstract class BaseTest {
     protected WebDriver driver;
     private BrowserTypes browserType;
@@ -30,5 +33,14 @@ public abstract class BaseTest {
     @AfterEach
     public void tearDown() {
         DriverFactory.closeDriver();
+    }
+
+//    @AfterAll
+    public static void killDrivers() {
+        killProcessesUsingIds();
+    }
+
+    public void assertStringsEqual(String actual, String expected) {
+        assertEquals(expected, actual, "Strings are not equal (case-sensitive).");
     }
 }

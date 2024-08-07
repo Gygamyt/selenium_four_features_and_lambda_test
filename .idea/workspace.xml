@@ -5,18 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f40a4fe3-2f83-415c-a0b1-49f868da3d9b" name="Changes" comment="factory init">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/geightgeight/seleniumremember/logging/ILogger.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/geightgeight/seleniumremember/pageobjects/BasePage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/geightgeight/seleniumremember/pageobjects/ChooseSearchEnginePage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/geightgeight/seleniumremember/pageobjects/LambdaTestMainPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/geightgeight/seleniumremember/utils/GeneratorOfRandomThings.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/geightgeight/seleniumremember/TestForTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/geightgeight/seleniumremember/pageobjects/LambdatestSeleniumDragAndDropPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/geightgeight/seleniumremember/pageobjects/LambdatestSeleniumSimpleFormDemoPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/geightgeight/seleniumremember/utils/ProcessKiller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/geightgeight/seleniumremember/driver/BrowserTypes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/geightgeight/seleniumremember/driver/BrowserTypes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/geightgeight/seleniumremember/driver/CommonDriverOptions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/geightgeight/seleniumremember/driver/CommonDriverOptions.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/geightgeight/seleniumremember/driver/DriverFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/geightgeight/seleniumremember/driver/DriverFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/geightgeight/seleniumremember/pageobjects/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/geightgeight/seleniumremember/pageobjects/BasePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/geightgeight/seleniumremember/pageobjects/LambdaTestMainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/geightgeight/seleniumremember/pageobjects/LambdaTestMainPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/geightgeight/seleniumremember/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/geightgeight/seleniumremember/BaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/geightgeight/seleniumremember/TestForTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/geightgeight/seleniumremember/TestForTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,28 +67,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Gradle.Load Gradle Dependencies.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.TestForTests.test.executor&quot;: &quot;Run&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.import&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Gradle.Load Gradle Dependencies.executor": "Run",
+    "Gradle.TestForTests.test.executor": "Run",
+    "Gradle.TestForTests.test2.executor": "Run",
+    "Gradle.TestForTests.testScenarioSecond.executor": "Run",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "editor.preferences.import",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RunManager">
+}]]></component>
+  <component name="RunManager" selected="Gradle.TestForTests.testScenarioSecond">
     <configuration name="TestForTests.test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -115,8 +115,58 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
+    <configuration name="TestForTests.test2" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.geightgeight.seleniumremember.TestForTests.test2&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="TestForTests.testScenarioSecond" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.geightgeight.seleniumremember.TestForTests.testScenarioSecond&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.TestForTests.testScenarioSecond" />
+        <item itemvalue="Gradle.TestForTests.test2" />
         <item itemvalue="Gradle.TestForTests.test" />
       </list>
     </recent_temporary>
@@ -124,7 +174,7 @@
   <component name="SeleniumInternalSettingsState">
     <option name="lastFrameworkName" value="Selenium" />
     <option name="lastLanguageId" value="JAVA" />
-    <option name="lastUrl" value="https://www.lambdatest.com/selenium-playground/simple-form-demo" />
+    <option name="lastUrl" value="https://www.lambdatest.com/selenium-playground/drag-drop-range-sliders-demo" />
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -149,6 +199,7 @@
       <workItem from="1722857936932" duration="4991000" />
       <workItem from="1722935194135" duration="7141000" />
       <workItem from="1722942950884" duration="5087000" />
+      <workItem from="1723021230652" duration="12831000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />

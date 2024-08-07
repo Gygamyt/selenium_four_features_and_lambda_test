@@ -1,13 +1,14 @@
 package geightgeight.seleniumremember.driver;
 
 import geightgeight.seleniumremember.logging.ILogger;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.time.Duration;
+
+import static geightgeight.seleniumremember.utils.ProcessKiller.saveProcessId;
 
 public class DriverFactory implements ILogger {
     private static volatile WebDriver driver;
@@ -34,14 +35,17 @@ public class DriverFactory implements ILogger {
                         case CHROME:
 //                            WebDriverManager.chromedriver().setup();
                             driver = new ChromeDriver(browserType.getChromeOptions());
+                            saveProcessId("chromedriver");
                             break;
                         case FIREFOX:
-                            WebDriverManager.firefoxdriver().setup();
+//                            WebDriverManager.firefoxdriver().setup();
                             driver = new FirefoxDriver(browserType.getFirefoxOptions());
+                            saveProcessId("geckodriver");
                             break;
                         case EDGE:
-                            WebDriverManager.edgedriver().setup();
+//                            WebDriverManager.edgedriver().setup();
                             driver = new EdgeDriver(browserType.getEdgeOptions());
+                            saveProcessId("msedgedriver");
                             break;
                         default:
                             throw new IllegalArgumentException("Unsupported browser type: " + browserType);

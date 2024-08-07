@@ -25,7 +25,7 @@ tasks.withType(JavaCompile) {
 
 dependencies {
     implementation('org.seleniumhq.selenium:selenium-java:4.23.0')
-    implementation("org.seleniumhq.selenium:selenium-devtools-v126:4.23.0")
+    implementation("org.seleniumhq.selenium:selenium-devtools-v113:4.11.0")
 
     implementation("org.apache.logging.log4j:log4j-api:${log4jVersion}")
     implementation("org.apache.logging.log4j:log4j-core:${log4jVersion}")
@@ -36,6 +36,8 @@ dependencies {
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
 
     implementation ("io.github.bonigarcia:webdrivermanager:5.9.2")
+
+    implementation("org.apache.commons:commons-exec:1.4.0")
 }
 
 test {
