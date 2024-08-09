@@ -4,6 +4,7 @@ import geightgeight.seleniumremember.driver.DriverFactory;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 // page_url = https://www.lambdatest.com/selenium-playground/
 public class LambdaTestMainPage extends BasePage {
@@ -21,9 +22,8 @@ public class LambdaTestMainPage extends BasePage {
     private WebElement dragDropRangeLinkElement;
 
     public LambdaTestMainPage acceptAllCookiesIfPanelExist() {
-        if (acceptAllCookies.isDisplayed()) {
-            clickElement(acceptAllCookies);
-        }
+        waiter.until(ExpectedConditions.elementToBeClickable(acceptAllCookies));
+        acceptAllCookies.click();
         return this;
     }
 

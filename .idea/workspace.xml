@@ -5,15 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f40a4fe3-2f83-415c-a0b1-49f868da3d9b" name="Changes" comment="factory init">
-      <change afterPath="$PROJECT_DIR$/src/main/java/geightgeight/seleniumremember/pageobjects/LambdatestSeleniumDragAndDropPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/geightgeight/seleniumremember/pageobjects/LambdatestSeleniumSimpleFormDemoPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/geightgeight/seleniumremember/utils/ProcessKiller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/geightgeight/seleniumremember/driver/DriverFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/geightgeight/seleniumremember/driver/DriverFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/geightgeight/seleniumremember/pageobjects/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/geightgeight/seleniumremember/pageobjects/BasePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/geightgeight/seleniumremember/pageobjects/LambdaTestMainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/geightgeight/seleniumremember/pageobjects/LambdaTestMainPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/geightgeight/seleniumremember/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/geightgeight/seleniumremember/BaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/geightgeight/seleniumremember/pageobjects/LambdatestSeleniumDragAndDropPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/geightgeight/seleniumremember/pageobjects/LambdatestSeleniumDragAndDropPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/geightgeight/seleniumremember/TestForTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/geightgeight/seleniumremember/TestForTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -67,29 +63,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "Gradle.Load Gradle Dependencies.executor": "Run",
-    "Gradle.TestForTests.test.executor": "Run",
-    "Gradle.TestForTests.test2.executor": "Run",
-    "Gradle.TestForTests.testScenarioSecond.executor": "Run",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "editor.preferences.import",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Gradle.Load Gradle Dependencies.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.TestForTests.test.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.TestForTests.test2.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.TestForTests.testScenarioSecond.executor&quot;: &quot;Run&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Gradle.TestForTests.testScenarioSecond">
     <configuration name="TestForTests.test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -200,6 +196,10 @@
       <workItem from="1722935194135" duration="7141000" />
       <workItem from="1722942950884" duration="5087000" />
       <workItem from="1723021230652" duration="12831000" />
+      <workItem from="1723200168835" duration="745000" />
+      <workItem from="1723202064089" duration="40000" />
+      <workItem from="1723202113463" duration="90000" />
+      <workItem from="1723202224604" duration="3134000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />

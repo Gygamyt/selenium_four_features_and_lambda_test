@@ -62,7 +62,7 @@ public class DriverFactory implements ILogger {
     public static void closeDriver() {
         if (DriverFactory.getDriver() != null) {
             try {
-                DriverFactory.getDriver().quit();
+                DriverFactory.getDriver().close();
                 ILogger.getStaticLogger(DriverFactory.class)
                         .info("Driver closed");
             } catch (Exception e) {

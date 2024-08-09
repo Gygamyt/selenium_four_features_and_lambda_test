@@ -54,6 +54,11 @@ public abstract class BasePage {
         return coordinates;
     }
 
+    public void printCoordinates(WebElement element) {
+        var coordinates = getCoordinatesOfElement(element);
+        System.out.println(coordinates.get("x") + " x\n" + coordinates.get("y") + "y");
+    }
+
     public void getCurrentLink () {
         DriverFactory.getDriver().getCurrentUrl();
     }

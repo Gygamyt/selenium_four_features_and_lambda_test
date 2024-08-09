@@ -3,6 +3,7 @@ package com.geightgeight.seleniumremember;
 import geightgeight.seleniumremember.driver.DriverFactory;
 import geightgeight.seleniumremember.pageobjects.LambdaTestMainPage;
 import geightgeight.seleniumremember.utils.GeneratorOfRandomThings;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class TestForTests extends BaseTest {
@@ -27,9 +28,19 @@ public class TestForTests extends BaseTest {
         LambdaTestMainPage lambdaTestMainPage = new LambdaTestMainPage(DriverFactory.getDriver());
         DriverFactory.getDriver().get("https://www.lambdatest.com/selenium-playground/");
 
-        lambdaTestMainPage
+        var lambdatestSeleniumDragAndDropPage = lambdaTestMainPage
                 .acceptAllCookiesIfPanelExist()
                 .clickDragDropRangeLinkElement()
-                .slideTo95Value();
+                .getCoordinatesOfSlider();
+
+        int i = 29;
+
+        while (!lambdatestSeleniumDragAndDropPage.getTextRangeSuccessElement5().equals("95")) {
+            i = i + 1;
+            lambdatestSeleniumDragAndDropPage.slideTo95Value(i);
+//            lambdatestSeleniumDragAndDropPage.getCoordinatesOfSlider();
+        }
+
+        Assertions.assertEquals("95", lambdatestSeleniumDragAndDropPage.getTextRangeSuccessElement5());
     }
 }

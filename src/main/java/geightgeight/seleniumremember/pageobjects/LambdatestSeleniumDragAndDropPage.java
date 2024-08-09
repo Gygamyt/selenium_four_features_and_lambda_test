@@ -15,31 +15,35 @@ public class LambdatestSeleniumDragAndDropPage extends BasePage {
     /**
      * Да, я обязательно сделаю лучше.
      */
-    @FindBy(xpath = "//*[@id='slider3']//h4[contains(text(), 'Default value 15')]/following-sibling::div//input[@type='range']")
-    private WebElement defaultValue15Slider;
+//    @FindBy(xpath = "//*[@id='slider3']//h4[contains(text(), 'Default value 15')]/following-sibling::div//input[@type='range']")
+//    private WebElement defaultValue15Slider;
+//
+//    @FindBy(xpath = "//*[@id='slider3']//h4[contains(text(), 'Default value 15')]/following-sibling::div//output[@id='rangeSuccess']")
 
-    @FindBy(xpath = "//*[@id='slider3']//h4[contains(text(), 'Default value 15')]/following-sibling::div//output[@id='rangeSuccess']")
-    private WebElement defaultValue15Result;
+    @FindBy(css = "input[value='15']")
+    private WebElement sliderElement;
 
-    public String getTextOfSliderWithDefaultValue15() {
-        return defaultValue15Slider.getText();
+    @FindBy(css = "#rangeSuccess")
+    private WebElement rangeSuccessElement;
+
+    public String getTextRangeSuccessElement5() {
+        return rangeSuccessElement.getText();
     }
 
-    public LambdatestSeleniumDragAndDropPage slideTo95Value() {
-        Map<String, Integer> coordinates = getCoordinatesOfElement(defaultValue15Slider);
+    public LambdatestSeleniumDragAndDropPage slideTo95Value(int sliderValue) {
+        Map<String, Integer> coordinates = getCoordinatesOfElement(sliderElement);
 
-        String result;
+        actions.moveToElement(sliderElement, ((coordinates.get("x") * 10) / 100) + sliderValue, 0)
+                .click()
+                .build()
+                .perform();
 
-        do {
-            actions
-                    .clickAndHold(defaultValue15Slider)
-                    .moveToLocation(coordinates.get("x"), coordinates.get("y"))
-                    .perform();
+        return this;
+    }
 
-            coordinates.put("x", coordinates.get("x") + 1);
-            result = getText(defaultValue15Result);
-        } while (!result.equals("95"));
-
+    public LambdatestSeleniumDragAndDropPage getCoordinatesOfSlider() {
+        printCoordinates(sliderElement);
+        System.out.println(sliderElement.getLocation().getX() + "x" + sliderElement.getLocation().getY());
         return this;
     }
 }
