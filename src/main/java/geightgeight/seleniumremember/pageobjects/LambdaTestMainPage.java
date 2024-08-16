@@ -1,6 +1,6 @@
 package geightgeight.seleniumremember.pageobjects;
 
-import geightgeight.seleniumremember.driver.DriverFactory;
+import geightgeight.seleniumremember.driver.DriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -29,11 +29,11 @@ public class LambdaTestMainPage extends BasePage {
 
     public LambdatestSeleniumDragAndDropPage clickDragDropRangeLinkElement() {
         clickElement(dragDropRangeLinkElement);
-        return new LambdatestSeleniumDragAndDropPage(DriverFactory.getDriver());
+        return new LambdatestSeleniumDragAndDropPage(DriverManager.getDriver());
     }
 
     public LambdatestSeleniumSimpleFormDemoPage clickSimpleFormDemoLinkElement() {
         clickElement(simpleFormDemoLinkElement);
-        return new LambdatestSeleniumSimpleFormDemoPage(DriverFactory.getDriver());
+        return new LambdatestSeleniumSimpleFormDemoPage(DriverManager.getDriver());
     }
 }

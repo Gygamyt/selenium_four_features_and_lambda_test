@@ -1,6 +1,6 @@
 package geightgeight.seleniumremember.pageobjects;
 
-import geightgeight.seleniumremember.driver.DriverFactory;
+import geightgeight.seleniumremember.driver.DriverManager;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -21,8 +21,8 @@ public abstract class BasePage {
 
     public BasePage(WebDriver driver) {
         PageFactory.initElements(driver, this);
-        this.waiter = new WebDriverWait(DriverFactory.getDriver(), Duration.ofSeconds(10));
-        this.actions = new Actions(DriverFactory.getDriver());
+        this.waiter = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(10));
+        this.actions = new Actions(DriverManager.getDriver());
     }
 
     public void clickElement(WebElement element) {
@@ -60,6 +60,6 @@ public abstract class BasePage {
     }
 
     public void getCurrentLink () {
-        DriverFactory.getDriver().getCurrentUrl();
+        DriverManager.getDriver().getCurrentUrl();
     }
 }

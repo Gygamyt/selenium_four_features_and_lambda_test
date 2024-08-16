@@ -1,7 +1,7 @@
 package com.geightgeight.seleniumremember;
 
 import geightgeight.seleniumremember.driver.BrowserTypes;
-import geightgeight.seleniumremember.driver.DriverFactory;
+import geightgeight.seleniumremember.driver.DriverManager;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.WebDriver;
@@ -27,12 +27,12 @@ public abstract class BaseTest {
             throw new IllegalArgumentException("Unknown browser type: " + browser);
         }
 
-        driver = DriverFactory.getDriver(browserType);
+        driver = DriverManager.getDriver(browserType);
     }
 
     @AfterEach
     public void tearDown() {
-        DriverFactory.closeDriver();
+        DriverManager.closeDriver();
     }
 
 //    @AfterAll

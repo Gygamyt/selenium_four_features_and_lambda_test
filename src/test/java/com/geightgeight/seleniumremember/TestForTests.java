@@ -1,6 +1,6 @@
 package com.geightgeight.seleniumremember;
 
-import geightgeight.seleniumremember.driver.DriverFactory;
+import geightgeight.seleniumremember.driver.DriverManager;
 import geightgeight.seleniumremember.pageobjects.LambdaTestMainPage;
 import geightgeight.seleniumremember.utils.GeneratorOfRandomThings;
 import org.junit.jupiter.api.Assertions;
@@ -10,8 +10,8 @@ public class TestForTests extends BaseTest {
 
     @Test
     public void testScenarioFirst() {
-        LambdaTestMainPage lambdaTestMainPage = new LambdaTestMainPage(DriverFactory.getDriver());
-        DriverFactory.getDriver().get("https://www.lambdatest.com/selenium-playground/");
+        LambdaTestMainPage lambdaTestMainPage = new LambdaTestMainPage(DriverManager.getDriver());
+        DriverManager.getDriver().get("https://www.lambdatest.com/selenium-playground/");
         String userMsg = GeneratorOfRandomThings.generateSentence(8);
 
         String appearedMessage = lambdaTestMainPage
@@ -25,8 +25,8 @@ public class TestForTests extends BaseTest {
 
     @Test
     public void testScenarioSecond() throws InterruptedException {
-        LambdaTestMainPage lambdaTestMainPage = new LambdaTestMainPage(DriverFactory.getDriver());
-        DriverFactory.getDriver().get("https://www.lambdatest.com/selenium-playground/");
+        LambdaTestMainPage lambdaTestMainPage = new LambdaTestMainPage(DriverManager.getDriver());
+        DriverManager.getDriver().get("https://www.lambdatest.com/selenium-playground/");
 
         var lambdatestSeleniumDragAndDropPage = lambdaTestMainPage
                 .acceptAllCookiesIfPanelExist()
