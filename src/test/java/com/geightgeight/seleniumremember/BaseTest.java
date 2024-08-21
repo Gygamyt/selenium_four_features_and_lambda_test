@@ -6,28 +6,21 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.WebDriver;
 
+import java.net.MalformedURLException;
+import java.net.URISyntaxException;
+
 import static geightgeight.seleniumremember.utils.ProcessKiller.killProcessesUsingIds;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+//@ExtendWith({BeforeEachExtension.class, CustomParameterResolver.class})
 public abstract class BaseTest {
     protected WebDriver driver;
-    private BrowserTypes browserType;
+    protected BrowserTypes browserType;
 
     @BeforeEach
-    public void setUp() {
-        String browser = System.getProperty("browser_type");
-
-        if (browser == null) {
-            browser = "chrome";
-        }
-
-        try {
-            browserType = BrowserTypes.valueOf(browser.toUpperCase());
-        } catch (IllegalArgumentException e) {
-            throw new IllegalArgumentException("Unknown browser type: " + browser);
-        }
-
+    public void setUp(BrowserTypes browserType) throws MalformedURLException, URISyntaxException {
         driver = DriverManager.getDriver(browserType);
+        driver.get("https://www.lambdatest.com/selenium-playground/");
     }
 
     @AfterEach

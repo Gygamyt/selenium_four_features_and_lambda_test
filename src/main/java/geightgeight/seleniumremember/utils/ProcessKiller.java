@@ -8,6 +8,8 @@ import java.io.InputStreamReader;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.ExecutionException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Вот этот вот киллер процессов был написан по той причине, что после тест рана оставался
@@ -23,17 +25,19 @@ public class ProcessKiller implements ILogger {
     }
 
     private static long getProcessId(String command) throws IOException {
-        ProcessBuilder processBuilder = new ProcessBuilder("cmd", "/c", command);
+        ProcessBuilder processBuilder = new ProcessBuilder(command.split(" "));
         processBuilder.redirectErrorStream(true);
 
         Process process = processBuilder.start();
 
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()))) {
             String line;
+            // Pattern to match the process ID
+            Pattern pattern = Pattern.compile("(\\d+)");
             while ((line = reader.readLine()) != null) {
-                if (line.contains("chromedriver") || line.contains("geckodriver") || line.contains("msedgedriver")) {
-                    String[] parts = line.trim().split("\\s+");
-                    return Long.parseLong(parts[1]);
+                Matcher matcher = pattern.matcher(line);
+                if (matcher.find()) {
+                    return Long.parseLong(matcher.group(1));
                 }
             }
         }
@@ -48,14 +52,11 @@ public class ProcessKiller implements ILogger {
                     try {
                         processHandle.onExit().get();
                     } catch (InterruptedException | ExecutionException e) {
-                        e.printStackTrace();
-                        ILogger.getStaticLogger(ProcessKiller.class).error(e.getMessage());
-                        ILogger.getStaticLogger(ProcessKiller.class).error("Тут что-то сдохло.");
+                        ILogger.getStaticLogger(ProcessKiller.class).error("Failed to wait for process exit: {}", e.getMessage());
                     }
                 });
             } catch (Exception e) {
-                ILogger.getStaticLogger(ProcessKiller.class).error(e.getMessage());
-                ILogger.getStaticLogger(ProcessKiller.class).error("Здесь что-то сдохло.");
+                ILogger.getStaticLogger(ProcessKiller.class).error("Error handling process ID {}: {}", processId, e.getMessage());
             }
         }
         processIds.clear();
@@ -63,13 +64,21 @@ public class ProcessKiller implements ILogger {
 
     public static void saveProcessId(String driverName) {
         try {
-            String command = "ps -ef | grep " + driverName;
+            String os = System.getProperty("os.name").toLowerCase();
+            String command;
+
+            if (os.contains("win")) {
+                command = "cmd /c tasklist | findstr " + driverName;
+            } else {
+                command = "ps -e | grep " + driverName;
+            }
+
             long pid = getProcessId(command);
             if (pid > 0) {
                 addProcessIdToList(pid);
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            ILogger.getStaticLogger(ProcessKiller.class).error("Failed to retrieve process ID: {}", e.getMessage());
         }
     }
 }

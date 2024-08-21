@@ -1,15 +1,18 @@
 package geightgeight.seleniumremember.driver.factories;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
+
+import java.net.MalformedURLException;
+import java.net.URISyntaxException;
 
 import static geightgeight.seleniumremember.driver.CommonDriverOptions.getCommonFirefoxOptions;
+import static geightgeight.seleniumremember.driver.factories.DriverFactory.getRemoteUrl;
 import static geightgeight.seleniumremember.utils.ProcessKiller.saveProcessId;
 
 public final class FirefoxDriverFactory implements IWebDriver {
     @Override
-    public WebDriver createDriver() {
+    public RemoteWebDriver createDriver() throws MalformedURLException, URISyntaxException {
         saveProcessId("geckodriver");
-        return new FirefoxDriver(getCommonFirefoxOptions());
+        return new RemoteWebDriver(getRemoteUrl(), getCommonFirefoxOptions());
     }
 }

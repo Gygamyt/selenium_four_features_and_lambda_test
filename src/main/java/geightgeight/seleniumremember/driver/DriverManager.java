@@ -2,19 +2,22 @@ package geightgeight.seleniumremember.driver;
 
 import geightgeight.seleniumremember.logging.ILogger;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
+import java.net.MalformedURLException;
+import java.net.URISyntaxException;
 import java.time.Duration;
 
 import static geightgeight.seleniumremember.driver.factories.DriverFactory.fullySetUpDriver;
 import static geightgeight.seleniumremember.logging.ILogger.getStaticLogger;
 
 public class DriverManager implements ILogger {
-    private static volatile WebDriver driver;
+    private static volatile RemoteWebDriver driver;
 
     private DriverManager() {
     }
 
-    public static WebDriver getDriver() {
+    public static RemoteWebDriver getDriver() {
         if (driver == null) {
             synchronized (DriverManager.class) {
                 if (driver == null) {
@@ -25,13 +28,13 @@ public class DriverManager implements ILogger {
         return driver;
     }
 
-    public static WebDriver getDriver(BrowserTypes browserType) {
+    public static RemoteWebDriver getDriver(BrowserTypes browserType) throws MalformedURLException, URISyntaxException {
         if (driver == null) {
             synchronized (DriverManager.class) {
                 if (driver == null) {
                     driver = fullySetUpDriver(browserType.toString().toLowerCase());
                 }
-                setUpImplicitlyWait(driver, 5);
+                setUpImplicitlyWait(driver, 20);
                 getStaticLogger(DriverManager.class)
                         .info("Initialized WebDriver using {}", browserType);
             }
@@ -48,7 +51,6 @@ public class DriverManager implements ILogger {
             } catch (Exception e) {
                 getStaticLogger(DriverManager.class)
                         .error("{}/n{}", e.getMessage(), "Driver might not be closed");
-                System.out.println("Driver ne ybit bratik");
             } finally {
                 driver = null;
             }

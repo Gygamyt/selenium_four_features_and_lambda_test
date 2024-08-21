@@ -1,32 +1,18 @@
 package com.geightgeight.seleniumremember;
 
+import geightgeight.seleniumremember.driver.BrowserTypes;
 import geightgeight.seleniumremember.driver.DriverManager;
 import geightgeight.seleniumremember.pageobjects.LambdaTestMainPage;
-import geightgeight.seleniumremember.utils.GeneratorOfRandomThings;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.EnumSource;
 
-public class TestForTests extends BaseTest {
+public class DragAndDropTest {
 
-    @Test
-    public void testScenarioFirst() {
+    @ParameterizedTest
+    @EnumSource(BrowserTypes.class)
+    public void dragAndDrop() {
         LambdaTestMainPage lambdaTestMainPage = new LambdaTestMainPage(DriverManager.getDriver());
-        DriverManager.getDriver().get("https://www.lambdatest.com/selenium-playground/");
-        String userMsg = GeneratorOfRandomThings.generateSentence(8);
-
-        String appearedMessage = lambdaTestMainPage
-                .acceptAllCookiesIfPanelExist()
-                .clickSimpleFormDemoLinkElement()
-                .enterUserMessage(userMsg)
-                .getTextOfAppearedMessage();
-
-        assertStringsEqual(appearedMessage, userMsg);
-    }
-
-    @Test
-    public void testScenarioSecond() throws InterruptedException {
-        LambdaTestMainPage lambdaTestMainPage = new LambdaTestMainPage(DriverManager.getDriver());
-        DriverManager.getDriver().get("https://www.lambdatest.com/selenium-playground/");
 
         var lambdatestSeleniumDragAndDropPage = lambdaTestMainPage
                 .acceptAllCookiesIfPanelExist()
